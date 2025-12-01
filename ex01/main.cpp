@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 15:40:23 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/01 17:25:43 by maballet         ###   ########lyon.fr   */
+/*   Created: 2025/12/01 18:00:04 by maballet          #+#    #+#             */
+/*   Updated: 2025/12/01 19:29:44 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include<string>
+#include "Zombie.hpp"
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+// Ici je recupere le pointeur sur le tableau de zombie.
+// Je demande a l'un des zombies de s'annoncer et je libère la memoire.
 
-class	Zombie {
-	
-	private:
+//JE LIBÈRE MAL LA MEMOIRE
 
-	std::string	_name;
+int	main() {
 
-	public:
-
-	Zombie( std::string name );
-	~Zombie();
-
-	void	announce( void ) const;
-};
-
-Zombie* newZombie( std::string name );
-void	randomChump( std::string name );
-
-#endif
+	int N = 5;
+	Zombie *result;
+	result = zombieHorde(N, "Caciopée");
+	result[0].announce();
+	delete result;
+	return (0);
+}
