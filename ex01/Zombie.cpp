@@ -6,13 +6,13 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:30:34 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/01 18:10:02 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/02 16:01:45 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name): _name(name) {}
+Zombie::Zombie() {}
 
 Zombie::~Zombie() {
 
@@ -22,4 +22,8 @@ Zombie::~Zombie() {
 void	Zombie::announce( void ) const{
 
 	std::cout << this->_name << ": MoreBraiinnnzzzzZ" << std::endl;
+}
+
+void Zombie::setName(std::string name) {
+    this->_name = name;
 }

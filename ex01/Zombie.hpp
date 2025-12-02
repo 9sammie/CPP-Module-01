@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:22:15 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/01 19:23:37 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/02 16:38:31 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ class	Zombie {
 
 	public:
 
-	Zombie(std::string name);
+	Zombie();
 	~Zombie();
 	
 	void	announce( void ) const;
+	void	setName(std::string name);
 };
 
 Zombie *zombieHorde( int N, std::string name );

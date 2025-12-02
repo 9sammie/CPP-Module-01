@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 18:02:01 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/01 19:26:47 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/02 16:00:30 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 Zombie *zombieHorde( int N, std::string name ) {
 
-	Zombie* Horde[N];
+	Zombie* Horde = new Zombie[N];
 	
 	for (int i = 0; i < N; i++) {
 
 		std::stringstream ss;
-		ss << i;
-		std::string newName = name + " " + ss.str();
-		Horde[i - 1] = new Zombie(newName);
+		ss << i + 1;
+		Horde[i].setName(name + " " + ss.str());
 	}
-	return *Horde;
+	Horde[0].announce();
+	return Horde;
 }
