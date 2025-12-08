@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:26:36 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/04 15:32:10 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/08 18:48:38 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Weapon{
 	
 	public:
 
-	Weapon();
+	Weapon(std::string WeaponType);
 	~Weapon();
 	
 	const std::string &getType() const;
