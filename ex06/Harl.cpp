@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:18:51 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/10 18:10:45 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 18:55:30 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,54 @@ Harl::Harl( void ) {
 Harl::~Harl( void ) {}
 
 void	Harl::debug( void ) {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "[ DEBUG ]" << std::endl << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl << std::endl;
 }
 
 void	Harl::info( void ) {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << "[ INFO ]" << std::endl << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl << std::endl;
 }
 
 void	Harl::warning( void ) {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
+	std::cout << "[ WARNING ]" << std::endl << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl << std::endl;
 }
 
 void	Harl::error( void ) {
-	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << "[ ERROR ]" << std::endl << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+void	Harl::execute(int i) {
+
+	for (int j = i; j < 4; j++)
+		(this->*functionPtr[j])();
+}	
+
+int		findIndex(std::string level) {
+
+	int i = 0;
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	while(levels[i] != level) 
+		i++;
+	return i;
 }
 
 void	Harl::complain(std::string level) {
 	
-	if (level == "DEBUG")
-		i = 0;
-	else if (level == "INFO")
-		i = 1;
-	else if (level == "WARNING")
-		i = 2;
-	else if (level == "ERROR")
-		i = 3;
-	else {
-		std::cout << "Error: invalid level" << std::endl;
-		return;
+	switch (findIndex(level)) {
+	case 0:
+		this->execute(0);
+		break;
+	case 1:
+		this->execute(1);
+		break;
+	case 2:
+		this->execute(2);
+		break;
+	case 3:
+		this->execute(3);
+		break;
+	default:
+		std::cout << "Error: invalid parameter" << std::endl;
+		break;
 	}
-	(this->*functionPtr[i])();
 }
