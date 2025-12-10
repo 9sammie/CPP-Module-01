@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:18:51 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/10 18:24:29 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 18:10:45 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,18 @@ void	Harl::error( void ) {
 }
 
 void	Harl::complain(std::string level) {
-
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	for (int i = 0; i < 4; i++) {
-		if(level == levels[i]) {
-			(this->*functionPtr[i])();
-			return;
-		}
+	
+	if (level == "DEBUG")
+		i = 0;
+	else if (level == "INFO")
+		i = 1;
+	else if (level == "WARNING")
+		i = 2;
+	else if (level == "ERROR")
+		i = 3;
+	else {
+		std::cout << "Error: invalid level" << std::endl;
+		return;
 	}
-	std::cout << "Error: invalid parameter" << std::endl;
+	(this->*functionPtr[i])();
 }
