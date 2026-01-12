@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:18:41 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/10 19:02:33 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/06 13:56:29 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Harl {
 	
 	private:
 	
-	void	debug( void );
-	void	info( void );
-	void	warning( void );
-	void	error( void );
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
     void	(Harl::*functionPtr[4])(void);
     // typedef void (Harl::*HarlFunc)(void);
     // HarlFunc functionPtr[4];
