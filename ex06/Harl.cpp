@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:18:51 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/10 18:55:30 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 22:07:18 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	Harl::complain(std::string level) {
 		this->execute(3);
 		break;
 	default:
-		std::cout << "Error: invalid parameter" << std::endl;
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		break;
 	}
 }

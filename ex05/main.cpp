@@ -6,21 +6,33 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:37:04 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/10 14:53:43 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/12 22:01:34 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(int argc, char **argv) {
+int main()
+{
+	Harl harl;
 
-	if (argc != 2 || !argv[1]) {
-		std::cout << "Invalid parameters, please enter: <program> <level>" << std::endl;
-		return(0);
-	}
-	class Harl costumer;
-	std::string level;
-	level = argv[1];
-	costumer.complain(level);
-	return (0);
+	std::cout << "=== DEBUG ===" << std::endl;
+	harl.complain("DEBUG");
+
+	std::cout << "\n=== INFO ===" << std::endl;
+	harl.complain("INFO");
+
+	std::cout << "\n=== WARNING ===" << std::endl;
+	harl.complain("WARNING");
+
+	std::cout << "\n=== ERROR ===" << std::endl;
+	harl.complain("ERROR");
+
+	std::cout << "\n=== PARAMETRE INVALIDE ===" << std::endl;
+	harl.complain("WRONG_LEVEL");
+
+	std::cout << "\n=== MINUSCULE ===" << std::endl;
+	harl.complain("debug");
+
+	return 0;
 }
