@@ -6,7 +6,7 @@
 /*   By: maballet <maballet@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 17:30:01 by maballet          #+#    #+#             */
-/*   Updated: 2025/12/08 20:02:09 by maballet         ###   ########lyon.fr   */
+/*   Updated: 2026/01/15 18:19:15 by maballet         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ HumanB::~HumanB() {}
 
 void HumanB::attack() const {
 
+	if (!this->_Weapon)
+		return;
 	std::cout << this->_name << " attacks with their "
 			  << this->_Weapon->getType() << std::endl;
 }
